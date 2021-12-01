@@ -3,7 +3,7 @@ package day1
 import java.io.File
 import kotlin.streams.toList
 
-class day1(filepath: String) {
+class Day1(filepath: String) {
 
     private val input = File(filepath).readLines()
         .stream()

@@ -1,8 +1,7 @@
-import day1.day1
-import java.io.File
+import day1.Day1
 
 fun main(args: Array<String>) {
 //    println(File("src/main/kotlin/day1/input.txt").readLines())
 
-    day1("src/main/kotlin/day1/input.txt")
+    Day1("src/main/kotlin/day1/input.txt")
 }
