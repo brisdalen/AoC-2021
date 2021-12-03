@@ -9,15 +9,17 @@ import java.util.stream.IntStream;
 public class Day1Java {
 
     List<Integer> input;
+    String path;
 
     public Day1Java(String filepath) {
+        path = filepath;
         try {
             input = Files.readAllLines(Paths.get(filepath))
                     .stream()
                     .mapToInt(Integer::valueOf)
                     .boxed()
                     .toList();
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -33,7 +35,7 @@ public class Day1Java {
     }
 
     private void day1b() {
-        var sumIncreased = (int) IntStream.range(1, input.size()-2)
+        var sumIncreased = (int) IntStream.range(1, input.size() - 2)
                 .filter(i -> sum(i, input) > sum(i - 1, input))
                 .count();
         System.out.println(sumIncreased);
