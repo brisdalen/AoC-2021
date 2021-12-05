@@ -1,7 +1,6 @@
 package day2
 
 import java.io.File
-import kotlin.streams.toList
 
 class Day2(filepath: String) {
 
@@ -16,18 +15,20 @@ class Day2(filepath: String) {
 
     private fun day2a() {
         var x = 0
-        var y = 0
+        var depth = 0
 
         lines.forEach { c ->
             val parts = c.split(" ")
+            val value = Integer.valueOf(parts[1])
+
             when(parts[0]) {
-                "forward" -> x += Integer.valueOf(parts[1])
-                "down" -> y += Integer.valueOf(parts[1])
-                "up" -> y -= Integer.valueOf(parts[1])
+                "forward" -> x += value
+                "down" -> depth += value
+                "up" -> depth -= value
             }
         }
 
-        println(x * y)
+        println(x * depth)
     }
 
     private fun day2b() {
@@ -38,6 +39,7 @@ class Day2(filepath: String) {
         lines.forEach { c ->
             val parts = c.split(" ")
             val value = Integer.valueOf(parts[1])
+
             when(parts[0]) {
                 "down" -> aim += value
                 "up" -> aim -= value
